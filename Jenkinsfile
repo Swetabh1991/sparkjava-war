@@ -1,14 +1,14 @@
 pipeline {
     agent any
     environment {
-        PATH = '/opt/maven/bin:$PATH"
+	PATH = '/opt/maven/bin:$PATH"
     }
     stages {
         stage ('build') {
 	    steps {
 	        sh 'maven clean install'
 	    }
-	}
+        } 
     }
 }
 
