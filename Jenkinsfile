@@ -1,10 +1,14 @@
 pipeline {
-    agent any
-    stages {
-	stage ("Built") {
-	    steps {
-		sh 'mvn clean install'
-	    }
+	agent any
+	environment {
+		PATH = '/opt/maven/bin:$PATH"
+		}
+	stages {
+		stage ('build') {
+			steps {
+				sh 'maven clean install'
+			}
+		}
 	}
-    }
-} 
+}
+
